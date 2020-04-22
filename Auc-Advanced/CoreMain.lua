@@ -60,7 +60,7 @@ local flagBlockTooltip = true
 function private.OnTooltip(tip, item, quantity, name, hyperlink, quality, ilvl, rlvl, itype, isubtype, stack, equiploc, texture)
 	if flagBlockTooltip then return end
 	if not tip then return end
-	if AucAdvanced.Settings.GetSetting("ModTTShow") and not IsAltKeyDown() then
+	if AucAdvanced.Settings.GetSetting("ModTTShow") and not (IsAltKeyDown() and IsShiftKeyDown()) then
 		return
 	end
 
